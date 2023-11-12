@@ -10,7 +10,7 @@ import ts from "@/assets/typescript.svg";
 
 const Expcard = () => {
   return (
-    <article className=" flex justify-center items-center flex-col rounded-l space-y-7 flex-shrink-0 w-[500px] md:w-[600px] xl:w-[900px] snap-center bg-[#292929] overflow-hidden cursor-pointer duration-200 transition-opacity opacity-50 hover:opacity-100 ">
+    <article className=" max-w-sm flex justify-center items-center flex-col rounded-l space-y-7 flex-shrink-0 w-[500px] md:w-[600px] xl:w-[900px] snap-center bg-[#292929] overflow-hidden cursor-pointer duration-200 transition-opacity opacity-50 hover:opacity-100 ">
       <motion.div
         className=" w-32 h-32 rounded-full xl:w-[200px] xl:h-[200px] object-cover object-center"
         initial={{

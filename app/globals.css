@@ -7,4 +7,13 @@
     .herobutton{
         @apply px-6 py-2 border border-primary rounded-full uppercase text-sm tracking-widest text-gray-500 transition-all hover:border-secondary/40 hover:text-secondary/80;
     }
+
+    .animated_underline {
+        @apply relative after:content-[""] after:absolute after:-bottom-0.5 after:bg-secondary after:h-px after:transition-all after:duration-[ease] after:delay-[0.2s] after:inset-x-2/4 hover:after:h-0.5 hover:after:inset-x-0 before:absolute before:-translate-x-full before:text-[#eee] before:opacity-30 before:font-thin before:text-[0.8em] before:-left-2.5 ;
+    }
+
+    .highlight{
+        @apply animated_underline font-bold text-secondary pt-2 max-[500px]:text-sm;
+    }
+
 }

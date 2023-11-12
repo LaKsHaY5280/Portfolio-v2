@@ -19,7 +19,7 @@ const config: Config = {
       },
     },
   },
-  plugins: [],
+  plugins: [require("tailwind-scrollbar")],
   safelist: [
     {
       pattern:

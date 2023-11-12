@@ -12,7 +12,7 @@ const Expcard = () => {
   return (
     <article className=" max-w-sm flex justify-center items-center flex-col rounded-l space-y-7 flex-shrink-0 w-[500px] md:w-[600px] xl:w-[900px] snap-center bg-[#292929] overflow-hidden cursor-pointer duration-200 transition-opacity opacity-50 hover:opacity-100 ">
       <motion.div
-        className=" w-32 h-32 rounded-full xl:w-[200px] xl:h-[200px] object-cover object-center"
+        className=" w-32 h-32 rounded-full xl:w-[100px] xl:h-[110px] object-cover object-center"
         initial={{
           y: -100,
           opacity: 0,
@@ -29,7 +29,7 @@ const Expcard = () => {
         <Image
           src={CuraHunt}
           alt="CuraHunt"
-          className=" w-full h-full rounded-full xl:w-[200px] xl:h-[200px] object-cover object-center"
+          className=" w-full h-full rounded-full xl:w-[100px] xl:h-[110px] object-cover object-center"
         />
       </motion.div>
       <div className=" px-0 md:px-10">

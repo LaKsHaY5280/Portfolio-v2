@@ -8,7 +8,7 @@ import { Github, ExternalLink } from "lucide-react";
 
 const ProjCard = () => {
   return (
-    <div className=" flex justify-center items-center flex-col space-y-5 p-20 md:p-44 h-screen w-screen flex-shrink-0 snap-center">
+    <div className=" flex justify-center items-center flex-col space-y-5 p-20 md:p-44 h-[97vh] w-screen flex-shrink-0 snap-center">
       <motion.div
         initial={{
           opacity: 0,

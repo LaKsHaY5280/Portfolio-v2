@@ -6,7 +6,7 @@ import ProjCard from "./shared/ProjCard";
 const Projects = () => {
   return (
     <motion.div
-      className=" relative flex justify-evenly items-center max-md:flex-col max-md:text-center max-w-full mx-auto overflow-hidden z-0 h-screen"
+      className=" relative flex justify-evenly items-center max-md:flex-col max-md:text-center max-w-full mx-auto overflow-hidden z-0 h-screen "
       initial={{
         opacity: 0,
       }}
@@ -20,7 +20,7 @@ const Projects = () => {
       <h3 className=" absolute top-24 tracking-[20px] text-gray-500 text-2xl uppercase ">
         Projects
       </h3>
-      <div className=" relative w-full flex overflow-x-scroll overflow-y-hidden snap-x snap-mandatory z-20">
+      <div className=" relative w-full flex overflow-x-scroll overflow-y-hidden snap-x snap-mandatory z-20 scrollbar scrollbar-track-gray-400/20 scrollbar-thumb-secondary/80">
         <ProjCard />
         <ProjCard />
         <ProjCard />

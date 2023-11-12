@@ -17,7 +17,7 @@ const Experience = () => {
 
   return (
     <motion.div
-      className=" relative flex justify-evenly items-center max-md:flex-col max-md:text-center max-w-full mx-auto md:px-10 pt-20 overflow-hidden h-screen"
+      className=" relative flex justify-center items-center max-md:flex-col max-md:text-center max-w-full mx-auto md:px-10 pt-20  h-screen"
       initial={{
         opacity: 0,
       }}
@@ -32,13 +32,13 @@ const Experience = () => {
         Experience
       </h3>
       <motion.div
-        ref={ref}
-        drag="x"
-        dragConstraints={{
-          right: 0,
-          left: -width,
-        }}
-        className=" w-full flex space-x-5  p-10 pl-0 lg:pt-32 snap-x snap-mandatory"
+        // ref={ref}
+        // drag="x"
+        // dragConstraints={{
+        //   right: 0,
+        //   left: -width,
+        // }}
+        className=" w-full flex space-x-5  p-10 p-y-0 snap-x snap-mandatory scrollbar scrollbar-track-gray-400/20 overflow-x-scroll scrollbar-thumb-secondary/80"
       >
         <Expcard />
         <Expcard />

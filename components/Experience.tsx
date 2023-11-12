@@ -1,6 +1,7 @@
 "use client";
 
 import { motion } from "framer-motion";
+import Expcard from "./shared/Expcard";
 
 const Experience = () => {
   return (
@@ -19,7 +20,16 @@ const Experience = () => {
       <h3 className=" absolute top-24 tracking-[20px] text-gray-500 text-2xl uppercase">
         Experience
       </h3>
-      <div></div>
+      <div className=" w-full flex space-x-5 overflow-x-scroll p-10 snap-x snap-mandatory">
+        <Expcard />
+        <Expcard />
+        <Expcard />
+        <Expcard />
+        <Expcard />
+        <Expcard />
+        <Expcard />
+        <Expcard />
+      </div>
     </motion.div>
   );
 };

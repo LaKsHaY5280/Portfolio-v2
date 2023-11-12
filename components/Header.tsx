@@ -5,7 +5,7 @@ import { motion } from "framer-motion";
 
 const Header = () => {
   return (
-    <header className=" flex justify-between items-center max-w-7xl mx-auto z-20 pt-2">
+    <header className=" max-w-7xl flex justify-between items-center mx-auto z-20 pt-2">
       <motion.div
         className=" flex justify-center items-center"
         initial={{
@@ -44,9 +44,8 @@ const Header = () => {
           bgColor="transparent"
         />
       </motion.div>
-
       <motion.div
-        className="flex justify-center items-center"
+        className="flex justify-center items-center pr-3"
         initial={{
           x: 500,
           opacity: 0,
@@ -67,7 +66,7 @@ const Header = () => {
           fgColor="gray"
           bgColor="transparent"
         />
-        <p className=" max-md:hidden uppercase text-sm text-gray-400 px-2">
+        <p className=" max-md:hidden uppercase text-sm text-gray-400">
           Get in Touch
         </p>
       </motion.div>

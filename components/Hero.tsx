@@ -25,6 +25,7 @@ const Hero = () => {
         src={pp}
         alt="profile"
         className=" relative rounded-full h-32 w-32 mx-auto object-cover"
+        priority
       />
       <div className=" z-30">
         <h2 className="  text-sm uppercase text-gray-500 pb-2 tracking-[15px]">

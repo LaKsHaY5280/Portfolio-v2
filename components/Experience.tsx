@@ -38,7 +38,7 @@ const Experience = () => {
           right: 0,
           left: -width,
         }}
-        className=" w-full flex space-x-5  p-10 pl-0 snap-x snap-mandatory"
+        className=" w-full flex space-x-5  p-10 pl-0 lg:pt-32 snap-x snap-mandatory"
       >
         <Expcard />
         <Expcard />

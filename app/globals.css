@@ -16,4 +16,8 @@
         @apply animated_underline font-bold text-secondary pt-2 max-[500px]:text-sm;
     }
 
+    .contactInput{
+        @apply outline-none bg-[#444444]/40 rounded-sm px-6 py-4 border-b border-primary text-gray-400 placeholder:text-gray-600 transition-all focus:border-secondary/40 focus:text-secondary hover:border-b-secondary;
+    }
+
 }

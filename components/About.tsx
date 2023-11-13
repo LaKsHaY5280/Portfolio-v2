@@ -2,9 +2,14 @@
 
 import { motion } from "framer-motion";
 import Image from "next/image";
-import pp from "@/assets/pp.jpeg";
+import { PageInfo } from "@/lib/types/types";
+import { urlFor } from "@/lib/utils/configSanity";
 
-const About = () => {
+type props = {
+  pageinfo: PageInfo[];
+};
+
+const About = ({ pageinfo }: props) => {
   return (
     <motion.div
       className=" relative flex justify-evenly items-center max-md:flex-col max-md:text-center max-w-7xl mx-auto md:px-10 pt-20  h-screen"
@@ -37,9 +42,11 @@ const About = () => {
         viewport={{ once: true }}
       >
         <Image
-          src={pp}
+          src={urlFor(pageinfo[0]?.profilePic).url()}
           alt="profile"
           className=" w-full h-full -mb-20 md:mb-0 flex-shrink-0 rounded-full object-cover md:rounded-lg md:w-64 md:h-96 xl:w-[400px] xl:h-[500px]"
+          width={400}
+          height={500}
         />
       </motion.div>
       <div className=" px-5 pt-10 md:px-10">
@@ -60,8 +67,7 @@ const About = () => {
             {" "}
             Lakshay Goyal
           </span>
-          , a web developer who crafts captivating digital experiences. With an
-          artistic flair and a user-centric mindset, I weave wonders on the web.
+          {pageinfo[0]?.backgroundInformation}
         </p>
         <span className="md:text-xl font-semibold py-3 max-[500px]:text-base">
           Experience and Expertise

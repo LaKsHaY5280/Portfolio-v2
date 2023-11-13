@@ -2,13 +2,14 @@
 
 import { motion } from "framer-motion";
 import Image from "next/image";
-import CuraHunt from "@/assets/CuraHunt.svg";
-import html from "@/assets/html.svg";
-import css from "@/assets/css.svg";
-import js from "@/assets/javascript.svg";
-import ts from "@/assets/typescript.svg";
+import { Experience } from "@/lib/types/types";
+import { urlFor } from "@/lib/utils/configSanity";
 
-const Expcard = () => {
+type props = {
+  exp: Experience;
+};
+
+const Expcard = ({ exp }: props) => {
   return (
     <article className=" max-w-sm flex justify-center items-center flex-col rounded-l space-y-7 flex-shrink-0 w-[500px] md:w-[600px] xl:w-[900px] snap-center bg-[#292929] overflow-hidden cursor-pointer duration-200 transition-opacity opacity-50 hover:opacity-100 ">
       <motion.div
@@ -27,26 +28,41 @@ const Expcard = () => {
         viewport={{ once: true }}
       >
         <Image
-          src={CuraHunt}
+          src={urlFor(exp?.companyImage).url()}
           alt="CuraHunt"
           className=" w-full h-full rounded-full xl:w-[100px] xl:h-[110px] object-cover object-center"
+          width={100}
+          height={110}
         />
       </motion.div>
       <div className=" px-0 md:px-10">
-        <h4 className=" text-4xl font-light">Back-End Developer</h4>
-        <p className=" font-bold text-2xl mt-1">CuraHunt</p>
+        <h4 className=" text-4xl font-light">{exp?.jobTitle}</h4>
+        <p className=" font-bold text-2xl mt-1">{exp?.company}</p>
         <div className=" flex space-x-2 my-2">
-          <Image src={html} alt="html" className=" h-10 w-10 rounded-full" />
-          <Image src={css} alt="css" className=" h-10 w-10 rounded-full" />
-          <Image src={js} alt="js" className=" h-10 w-10 rounded-full" />
-          <Image src={ts} alt="ts" className=" h-10 w-10 rounded-full" />
+          {exp?.technologies?.map((tech, i) => {
+            return (
+              <Image
+                key={tech._id}
+                src={urlFor(tech.image).url()}
+                alt={tech.title}
+                className=" h-10 w-10 rounded-full"
+                width={40}
+                height={40}
+              />
+            );
+          })}
         </div>
-        <p className=" py-5 text-gray-300 uppercase">Started - Ended</p>
+        <p className=" py-5 text-gray-300 uppercase">
+          {/* {exp?.DateStarted} - {exp?.DateEnded} */}
+          {new Date(exp?.dateStarted).toDateString()} -{" "}
+          {exp.isCurrentlyWorkingHere
+            ? "Present"
+            : new Date(exp?.dateEnded).toDateString()}
+        </p>
         <ul className=" list-disc space-y-4 ml-5 text-lg">
-          <li>Summary points</li>
-          <li>Summary points</li>
-          <li>Summary points</li>
-          <li>Summary points</li>
+          {exp?.points?.map((desc, i) => (
+            <li key={i}>{desc}</li>
+          ))}
         </ul>
       </div>
     </article>

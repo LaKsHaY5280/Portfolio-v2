@@ -3,8 +3,13 @@
 import { motion } from "framer-motion";
 import Expcard from "./shared/Expcard";
 import { useEffect, useRef, useState } from "react";
+import { Experience } from "@/lib/types/types";
 
-const Experience = () => {
+type props = {
+  experiences: Experience[];
+};
+
+const Experience = ({ experiences }: props) => {
   const [width, setWidth] = useState(0);
   const ref = useRef<HTMLDivElement>(null);
 
@@ -40,14 +45,9 @@ const Experience = () => {
         // }}
         className=" w-full flex space-x-5  p-10 p-y-0 snap-x snap-mandatory scrollbar scrollbar-track-gray-400/20 overflow-x-scroll scrollbar-thumb-secondary/80"
       >
-        <Expcard />
-        <Expcard />
-        <Expcard />
-        <Expcard />
-        <Expcard />
-        <Expcard />
-        <Expcard />
-        <Expcard />
+        {experiences.map((exp) => (
+          <Expcard key={exp._id} exp={exp} />
+        ))}
       </motion.div>
     </motion.div>
   );

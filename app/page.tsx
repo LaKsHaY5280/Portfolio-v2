@@ -6,35 +6,54 @@ import Header from "@/components/Header";
 import Hero from "@/components/Hero";
 import Projects from "@/components/Projects";
 import Skills from "@/components/Skills";
+import {
+  getPageInfo,
+  getExperience,
+  getSkills,
+  getProjects,
+  getSocials,
+} from "@/lib/action";
 import Link from "next/link";
 
-export default function Home() {
+export default async function Home() {
+  const pageInfo = await getPageInfo();
+  const experience = await getExperience();
+  const skills = await getSkills();
+  const projects = await getProjects();
+  const social = await getSocials();
+
+  // console.log(pageInfo);
+  // console.log(experience);
+  // console.log(skills);
+  // console.log(projects);
+  // console.log(social);
+
   return (
     <main className=" bg-[#242424] text-white h-screen snap-y snap-mandatory  overflow-y-scroll overflow-x-hidden z-0 scrollbar scrollbar-track-gray-400/20 scrollbar-thumb-secondary/80">
-      <Header />
+      <Header socials={social} />
 
       <section id="hero" className=" pt-10 snap-start">
-        <Hero />
+        <Hero pageinfo={pageInfo} />
       </section>
 
       <section id="about" className=" snap-center">
-        <About />
+        <About pageinfo={pageInfo} />
       </section>
 
       <section id="experience" className=" snap-center">
-        <Experience />
+        <Experience experiences={experience} />
       </section>
 
       <section id="skills" className=" snap-center">
-        <Skills />
+        <Skills skills={skills} />
       </section>
 
       <section id="projects" className=" snap-center">
-        <Projects />
+        <Projects projects={projects} />
       </section>
 
       <section id="contact" className=" snap-center">
-        <Contact />
+        <Contact pageinfo={pageInfo} />
       </section>
 
       <Link href="#hero">

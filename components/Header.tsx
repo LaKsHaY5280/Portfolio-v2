@@ -5,8 +5,13 @@ import { motion } from "framer-motion";
 import Link from "next/link";
 import envelop from "@/assets/envelop.png";
 import Image from "next/image";
+import { Social } from "@/lib/types/types";
 
-const Header = () => {
+type props = {
+  socials: Social[];
+};
+
+const Header = ({ socials }: props) => {
   return (
     <header className=" w-full flex justify-between items-center mx-auto z-20 pt-2 fixed">
       <div className=" w-full max-w-7xl flex justify-between items-center mx-auto z-20 ">
@@ -26,27 +31,15 @@ const Header = () => {
             duration: 1,
           }}
         >
-          {/* Social Handels */}
-          <SocialIcon
-            url="https://github.com/LaKsHaY5280"
-            fgColor="gray"
-            bgColor="transparent"
-          />
-          <SocialIcon
-            url="https://www.instagram.com/akuma._.lakshay"
-            fgColor="gray"
-            bgColor="transparent"
-          />
-          <SocialIcon
-            url="https://www.linkedin.com/in/lakshay-goyal-2a03a4270"
-            fgColor="gray"
-            bgColor="transparent"
-          />
-          <SocialIcon
-            url="https://x.com/Lakshay43075971?t=DdYs-Pgglu3BYdsbPlnbGQ&s=08"
-            fgColor="gray"
-            bgColor="transparent"
-          />
+          {socials.map((item) => (
+            <SocialIcon
+              key={item._id}
+              url={item.url}
+              target="_blank"
+              fgColor="gray"
+              bgColor="transparent"
+            />
+          ))}
         </motion.div>
         <Link href="#contact">
           <motion.div

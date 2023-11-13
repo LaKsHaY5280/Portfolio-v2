@@ -1,9 +1,14 @@
 "use client";
 
 import { motion } from "framer-motion";
-import Skill from "./shared/Skill";
+import Skilled from "./shared/Skill";
+import { Skill } from "@/lib/types/types";
 
-const Skills = () => {
+type props = {
+  skills: Skill[];
+};
+
+const Skills = ({ skills }: props) => {
   return (
     <motion.div
       className=" relative flex justify-evenly items-center max-xl:flex-col max-md:text-center max-w-[2000px] mx-auto xl:px-10 pt-20 xl:space-y-0 min-h-screen"
@@ -24,17 +29,12 @@ const Skills = () => {
         Hover over a skill to see the current profieciency
       </h3>
       <div className=" grid grid-cols-4 gap-10">
-        <Skill />
-        <Skill />
-        <Skill />
-        <Skill />
-        <Skill />
-        <Skill />
-        <Skill />
-        <Skill />
-        <Skill />
-        <Skill />
-        <Skill />
+        {skills?.slice(0, skills.length / 2).map((item) => (
+          <Skilled key={item._id} skills={item} />
+        ))}
+        {skills?.slice(skills.length / 2, skills.length).map((item) => (
+          <Skilled key={item._id} skills={item} dirl />
+        ))}
       </div>
     </motion.div>
   );

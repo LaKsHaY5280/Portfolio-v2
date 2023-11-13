@@ -5,7 +5,7 @@ import { Experience, PageInfo, Project, Skill, Social } from "../types/types";
 export async function getPageInfo() {
   const query = groq`*[_type=="pageInfo"] {...,socials[]->} | order(_updatedAt desc)`;
   const data = await client.fetch(query);
-  return data as PageInfo;
+  return data as PageInfo[];
 }
 export async function getExperience() {
   const query = groq`*[_type=="experience"] {...,technologies[]-> } | order(_updatedAt desc)`;

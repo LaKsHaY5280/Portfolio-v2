@@ -4,7 +4,7 @@ import pp from "@/assets/pp.jpeg";
 const Footer = () => {
   return (
     <footer className=" sticky bottom-5 w-full cursor-pointer">
-      <div className=" flex items-center">
+      <div className=" flex justify-center items-center">
         <Image
           src={pp}
           alt="profile"

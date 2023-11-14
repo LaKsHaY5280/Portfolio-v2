@@ -33,6 +33,7 @@ export default function DynamicMotionImg({ dirl, skills }: props) {
       transition={{
         duration: 1,
       }}
+      viewport={{ once: true }}
       className="rounded object-cover filter group-hover:grayscale transition duration-300 ease-in-out flex justify-center items-center"
       src={urlFor(skills?.image).url()}
       alt={skills.title}

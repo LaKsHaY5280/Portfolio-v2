@@ -23,10 +23,8 @@ const Hero = ({ pageinfo }: props) => {
     delaySpeed: 2000,
   });
 
-  // console.log(pageinfo[0].name);
-
   return (
-    <div className=" h-screen flex justify-center items-center flex-col space-y-8 text-center overflow-hidden">
+    <div className=" h-screen flex justify-center items-center flex-col space-y-8 max-md:-mt-5 text-center overflow-hidden">
       <BackgroundCircle />
       <Image
         src={urlFor(pageinfo[0]?.heroImage).url()}

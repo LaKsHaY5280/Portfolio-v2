@@ -34,7 +34,7 @@ const ContactForm = () => {
 
   return (
     <form
-      className=" relative flex flex-col space-y-2 w-fit mx-auto"
+      className=" relative flex flex-col space-y-2 mx-auto"
       onSubmit={handleSubmit}
     >
       <div className=" flex space-x-2">
@@ -76,7 +76,7 @@ const ContactForm = () => {
         id="msg"
       />
       <ValidationError prefix="Message" field="message" errors={state.errors} />
-      <button className=" bg-secondary py-5 px-10 text-black font-bold text-lg">
+      <button className=" bg-secondary md:py-5 md:px-10 text-black font-bold text-lg">
         Submit
       </button>
       {showPopup && (

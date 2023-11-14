@@ -12,7 +12,7 @@ type prop = {
 
 const Skilled = ({ dirl, skills }: prop) => {
   return (
-    <div className=" group relative flex cursor-pointer">
+    <div className=" group relative cursor-pointer flex justify-center items-center ">
       <motion.div
         initial={{
           x: dirl ? -200 : 200,
@@ -25,12 +25,13 @@ const Skilled = ({ dirl, skills }: prop) => {
         transition={{
           duration: 1,
         }}
-        className=" rounded-full border border-gray-500 object-cover w-24 h-24 xl:w-32 xl:h-32 filter group-hover:grayscale transition duration-300 ease-in-out "
+        viewport={{ once: true }}
+        className=" rounded object-cover w-14 h-14 xl:w-20 xl:h-20 filter group-hover:grayscale transition duration-300 ease-in-out flex justify-center items-center "
       >
         <Image
           src={urlFor(skills?.image).url()}
           alt="html"
-          className=" rounded-full border border-gray-500 object-cover w-24 h-24 xl:w-32 xl:h-32 filter group-hover:grayscale transition duration-300 ease-in-out "
+          className=" rounded object-cover w-14 h-14 xl:w-20 xl:h-20 filter group-hover:grayscale transition duration-300 ease-in-out "
           width={128}
           height={128}
         />

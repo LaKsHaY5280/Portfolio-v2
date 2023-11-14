@@ -9,7 +9,7 @@ type props = {
   experiences: Experience[];
 };
 
-const Experience = ({ experiences }: props) => {
+const Experiences = ({ experiences }: props) => {
   const [width, setWidth] = useState(0);
   const ref = useRef<HTMLDivElement>(null);
 
@@ -33,9 +33,7 @@ const Experience = ({ experiences }: props) => {
         duration: 3,
       }}
     >
-      <h3 className=" absolute top-24 tracking-[20px] text-gray-500 text-2xl uppercase">
-        Experience
-      </h3>
+      <h3 className=" headtext">Experience</h3>
       <motion.div
         // ref={ref}
         // drag="x"
@@ -43,7 +41,7 @@ const Experience = ({ experiences }: props) => {
         //   right: 0,
         //   left: -width,
         // }}
-        className=" w-full flex space-x-5  p-10 p-y-0 snap-x snap-mandatory scrollbar scrollbar-track-gray-400/20 overflow-x-scroll scrollbar-thumb-secondary/80"
+        className=" w-full flex space-x-5 p-10 p-y-0 snap-x snap-mandatory scrollbar scrollbar-track-gray-400/20 overflow-x-scroll scrollbar-thumb-secondary/80"
       >
         {experiences.map((exp) => (
           <Expcard key={exp._id} exp={exp} />
@@ -53,4 +51,4 @@ const Experience = ({ experiences }: props) => {
   );
 };
 
-export default Experience;
+export default Experiences;

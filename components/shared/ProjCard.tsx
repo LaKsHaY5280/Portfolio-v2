@@ -15,7 +15,7 @@ type props = {
 
 const ProjCard = ({ project, i }: props) => {
   return (
-    <div className=" flex justify-center items-center flex-col space-y-5 p-20 md:p-44 h-[97vh] w-screen flex-shrink-0 snap-center">
+    <div className=" flex justify-center items-center flex-col space-y-5 p-10 md:p-44 pt-16 md:h-[97vh] w-screen flex-shrink-0 snap-center">
       <motion.div
         initial={{
           opacity: 0,
@@ -31,11 +31,12 @@ const ProjCard = ({ project, i }: props) => {
         viewport={{
           once: true,
         }}
+        className=" max-md:w-full"
       >
         <Image
           src={urlFor(project?.image).url()}
           alt={project?.title}
-          className=" mt-14 max-w-md"
+          className=" mt-14 max-w-md w-full"
           width={500}
           height={500}
         />
@@ -54,7 +55,7 @@ const ProjCard = ({ project, i }: props) => {
                 key={tech._id}
                 src={urlFor(tech?.image).url()}
                 alt={project?.title}
-                className=" max-w-md"
+                className=" max-w-md max-md:w-5 max-md:h-5"
                 width={30}
                 height={30}
               />
@@ -62,7 +63,14 @@ const ProjCard = ({ project, i }: props) => {
           })}
         </div>
 
-        <p className=" max-md:text-xs">{project?.summary}</p>
+        <p className="max-md:text-xs">
+          {project?.summary &&
+            project.summary.split(" ").slice(0, 30).join(" ")}
+          {project?.summary && project.summary.split(" ").length > 30
+            ? "..."
+            : ""}
+        </p>
+
         <ul className=" flex justify-around items-center">
           <li>
             <Link href={project?.linkToBuild.toString()} target="blank">

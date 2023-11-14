@@ -37,10 +37,10 @@ const Hero = ({ pageinfo }: props) => {
         height={128}
       />
       <div className=" z-30">
-        <h2 className="  text-sm uppercase text-gray-500 pb-2 tracking-[15px]">
+        <h2 className=" text-xs md:text-sm uppercase text-gray-500 pb-2 tracking-[15px]">
           {pageinfo[0]?.role}
         </h2>
-        <h1 className=" text-5xl lg:text-6xl font-semibold px-10">
+        <h1 className=" text-xl lg:text-5xl font-semibold px-10">
           <span className=" mr-2">
             {text}
             <Cursor cursorColor="#F7Ab0A" />

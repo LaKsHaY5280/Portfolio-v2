@@ -5,14 +5,14 @@ export const config = {
   projectId: process.env.NEXT_PUBLIC_SANITY_PROJECT_ID!,
   dataset: process.env.NEXT_PUBLIC_SANITY_DATASET || "production",
   useCdn: true,
-  apiVersion: "v1",
+  apiVersion: "v2022-03-07",
 };
 
 export const client = createClient({
   projectId: process.env.NEXT_PUBLIC_SANITY_PROJECT_ID!,
   dataset: process.env.NEXT_PUBLIC_SANITY_DATASET || "production",
   useCdn: true,
-  apiVersion: "v1",
+  apiVersion: "v2022-03-07",
 });
 
 export const urlFor = (source: any) =>

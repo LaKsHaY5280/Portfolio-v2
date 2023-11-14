@@ -22,7 +22,7 @@ const Projects = ({ projects }: props) => {
         duration: 3,
       }}
     >
-      <h3 className=" absolute top-24 tracking-[20px] text-gray-500 text-2xl uppercase ">
+      <h3 className=" headtext">
         Projects
       </h3>
       <div className=" relative w-full flex overflow-x-scroll overflow-y-hidden snap-x snap-mandatory z-20 scrollbar scrollbar-track-gray-400/20 scrollbar-thumb-secondary/80">

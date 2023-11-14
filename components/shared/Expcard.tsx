@@ -11,9 +11,9 @@ type props = {
 
 const Expcard = ({ exp }: props) => {
   return (
-    <article className=" max-w-sm flex justify-center items-center flex-col rounded-l space-y-7 flex-shrink-0 w-[500px] md:w-[600px] xl:w-[900px] snap-center bg-[#292929] overflow-hidden cursor-pointer duration-200 transition-opacity opacity-50 hover:opacity-100 ">
+    <article className=" md:max-w-md flex justify-center items-center flex-col rounded-l md:space-y-7 flex-shrink-0 md:w-[600px] xl:w-[900px] snap-center bg-[#292929] overflow-hidden cursor-pointer duration-200 transition-opacity opacity-50 hover:opacity-100 h-full w-full ">
       <motion.div
-        className=" w-32 h-32 rounded-full xl:w-[100px] xl:h-[110px] object-cover object-center"
+        className=" w-20 h-20 rounded-full xl:w-[100px] xl:h-[110px] object-cover object-center"
         initial={{
           y: -100,
           opacity: 0,
@@ -36,30 +36,38 @@ const Expcard = ({ exp }: props) => {
         />
       </motion.div>
       <div className=" px-0 md:px-10">
-        <h4 className=" text-4xl font-light">{exp?.jobTitle}</h4>
-        <p className=" font-bold text-2xl mt-1">{exp?.company}</p>
-        <div className=" flex space-x-2 my-2">
+        <h4 className=" md:text-4xl font-light">{exp?.jobTitle}</h4>
+        <p className=" font-bold md:text-2xl mt-1">{exp?.company}</p>
+        <div className=" flex items-center justify-center space-x-2 my-2 mx">
           {exp?.technologies?.map((tech, i) => {
             return (
               <Image
                 key={tech._id}
                 src={urlFor(tech.image).url()}
                 alt={tech.title}
-                className=" h-10 w-10 rounded-full"
-                width={40}
-                height={40}
+                className=" h-7 w-7 rounded-full"
+                width={30}
+                height={30}
               />
             );
           })}
         </div>
-        <p className=" py-5 text-gray-300 uppercase">
-          {/* {exp?.DateStarted} - {exp?.DateEnded} */}
-          {new Date(exp?.dateStarted).toDateString()} -{" "}
+        <p className=" py-5 text-gray-300 uppercase text-sm">
+          {new Date(exp?.dateStarted).toLocaleDateString("en-US", {
+            year: "numeric",
+            month: "short",
+            day: "numeric",
+          })}{" "}
+          -{" "}
           {exp.isCurrentlyWorkingHere
             ? "Present"
-            : new Date(exp?.dateEnded).toDateString()}
+            : new Date(exp?.dateEnded).toLocaleDateString("en-US", {
+                year: "numeric",
+                month: "short",
+                day: "numeric",
+              })}
         </p>
-        <ul className=" list-disc space-y-4 ml-5 text-lg">
+        <ul className=" list-disc space-y-4 ml-5 text-xs md:text-lg">
           {exp?.points?.map((desc, i) => (
             <li key={i}>{desc}</li>
           ))}

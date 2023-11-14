@@ -22,13 +22,11 @@ const Skills = ({ skills }: props) => {
         duration: 3,
       }}
     >
-      <h3 className=" absolute top-24 tracking-[20px] text-gray-500 text-2xl uppercase">
-        Skills
-      </h3>
-      <h3 className=" absolute top-36 tracking-[3px] text-gray-500 text-sm uppercase">
+      <h3 className=" headtext">Skills</h3>
+      <h3 className=" absolute top-36 tracking-[3px] text-gray-500 text-xs md:text-xl uppercase">
         Hover over a skill to see the current profieciency
       </h3>
-      <div className=" grid grid-cols-4 gap-10">
+      <div className=" w-full h-80 grid grid-cols-4 px-5 gap-2 md:gap-5">
         {skills?.slice(0, skills.length / 2).map((item) => (
           <Skilled key={item._id} skills={item} />
         ))}

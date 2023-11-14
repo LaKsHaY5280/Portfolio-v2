@@ -5,7 +5,7 @@
 
 @layer components{
     .herobutton{
-        @apply px-6 py-2 border border-primary rounded-full uppercase text-sm tracking-widest text-gray-500 transition-all hover:border-secondary/40 hover:text-secondary/80;
+        @apply px-6 py-2 border border-primary rounded-full uppercase text-xs md:text-sm tracking-widest text-gray-500 transition-all hover:border-secondary/40 hover:text-secondary/80;
     }
 
     .animated_underline {
@@ -20,4 +20,7 @@
         @apply outline-none bg-[#444444]/40 rounded-sm px-6 py-4 border-b border-primary text-gray-400 placeholder:text-gray-600 transition-all focus:border-secondary/40 focus:text-secondary hover:border-b-secondary;
     }
 
+    .headtext{
+        @apply absolute top-24 md:tracking-[20px] tracking-[15px] text-gray-500 text-sm md:text-2xl uppercase;
+    }
 }

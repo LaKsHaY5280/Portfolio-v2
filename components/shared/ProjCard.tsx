@@ -48,7 +48,7 @@ const ProjCard = ({ project, i }: props) => {
         </h4>
 
         <div className=" flex justify-center items-center w-full space-x-3">
-          {project.technologies.map((tech) => {
+          {project?.technologies?.map((tech) => {
             return (
               <Image
                 key={tech._id}

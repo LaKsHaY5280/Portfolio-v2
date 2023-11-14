@@ -16,11 +16,11 @@ const Hero = ({ pageinfo }: props) => {
     words: [
       `Hi, my name is ${pageinfo[0]?.name}`,
       "A builder of spectacular websites",
-      "Someone who crafts captivating digital experiences",
       "Unleashing Digital Marvels",
     ],
     loop: 5,
-    delaySpeed: 2000,
+    delaySpeed: 1000,
+    typeSpeed: 40,
   });
 
   return (

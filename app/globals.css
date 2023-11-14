@@ -2,7 +2,11 @@
 @tailwind components;
 @tailwind utilities;
 
-
+@font-face {
+    font-family: "Coves";
+    src: url("../assets/coves-typeface/CovesBold.otf");
+  }
+    
 @layer components{
     .herobutton{
         @apply px-6 py-2 border border-primary rounded-full uppercase text-xs md:text-sm tracking-widest text-gray-500 transition-all hover:border-secondary/40 hover:text-secondary/80;

@@ -29,7 +29,7 @@ export default async function Home() {
   // console.log(social);
 
   return (
-    <main className=" bg-[#242424] text-white h-screen snap-y snap-mandatory  overflow-y-scroll overflow-x-hidden z-0 scrollbar scrollbar-track-gray-400/20 scrollbar-thumb-secondary/80">
+    <main className=" font-Coves bg-[#242424] text-white h-screen snap-y snap-mandatory  overflow-y-scroll overflow-x-hidden z-0 scrollbar scrollbar-track-gray-400/20 scrollbar-thumb-secondary/80">
       <Header socials={social} />
 
       <section id="hero" className=" pt-10 snap-start">

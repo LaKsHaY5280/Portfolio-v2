@@ -16,7 +16,7 @@ type props = {
 const ProjCard = ({ project, i }: props) => {
   return (
     <div className=" flex justify-center items-center flex-col space-y-5 p-10 md:p-44 pt-16 md:h-[97vh] w-screen flex-shrink-0 snap-center">
-      <motion.div
+      <motion.img
         initial={{
           opacity: 0,
           y: -300,
@@ -29,16 +29,13 @@ const ProjCard = ({ project, i }: props) => {
           duration: 1,
         }}
         viewport={{ once: true }}
-        className=" max-md:w-full"
-      >
-        <Image
-          src={urlFor(project?.image).url()}
-          alt={project?.title}
-          className=" mt-14 max-w-md w-full"
-          width={500}
-          height={500}
-        />
-      </motion.div>
+        // className=" max-md:w-full"
+        src={urlFor(project?.image).url()}
+        alt={project?.title}
+        className=" mt-14 max-w-md "
+        width={500}
+        height={500}
+      />
       <div className=" space-y-4 md:space-y-4 px-0 md:px-10 max-w-6xl">
         <h4 className=" text-xl md:text-4xl font-semibold text-center">
           <span className=" animated_underline">

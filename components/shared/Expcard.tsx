@@ -12,8 +12,12 @@ type props = {
 const Expcard = ({ exp }: props) => {
   return (
     <article className=" md:max-w-md flex justify-center items-center flex-col rounded-l md:space-y-7 flex-shrink-0 md:w-[600px] xl:w-[900px] snap-center bg-[#292929] overflow-hidden cursor-pointer duration-200 transition-opacity opacity-50 hover:opacity-100 h-full w-full ">
-      <motion.div
-        className=" w-20 h-20 rounded-full xl:w-[100px] xl:h-[110px] object-cover object-center"
+      <motion.img
+        src={urlFor(exp?.companyImage).url()}
+        alt="CuraHunt"
+        className=" rounded-full object-cover object-center"
+        width={100}
+        height={110}
         initial={{
           y: -100,
           opacity: 0,
@@ -26,15 +30,8 @@ const Expcard = ({ exp }: props) => {
           duration: 1,
         }}
         viewport={{ once: true }}
-      >
-        <Image
-          src={urlFor(exp?.companyImage).url()}
-          alt="CuraHunt"
-          className=" w-full h-full rounded-full xl:w-[100px] xl:h-[110px] object-cover object-center"
-          width={100}
-          height={110}
-        />
-      </motion.div>
+      />
+
       <div className=" px-0 md:px-10">
         <h4 className=" md:text-4xl font-light">{exp?.jobTitle}</h4>
         <p className=" font-bold md:text-2xl mt-1">{exp?.company}</p>

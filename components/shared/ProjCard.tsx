@@ -22,15 +22,13 @@ const ProjCard = ({ project, i }: props) => {
           y: -300,
         }}
         whileInView={{
-          opacity: 1,
           y: 0,
+          opacity: 1,
         }}
         transition={{
           duration: 1,
         }}
-        viewport={{
-          once: true,
-        }}
+        viewport={{ once: true }}
         className=" max-md:w-full"
       >
         <Image

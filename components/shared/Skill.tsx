@@ -36,7 +36,7 @@ const Skilled = ({ dirl, skills }: prop) => {
           height={128}
         />
       </motion.div>
-      <div className=" absolute opacity-0 group-hover:opacity-80 transition duration-300 ease-in-out group-hover:bg-white/70 w-24 h-24 xl:w-32 xl:h-32 rounded-full">
+      <div className=" absolute opacity-0 w-14 h-14  group-hover:opacity-80 transition duration-300 ease-in-out group-hover:bg-white/70 xl:w-20 xl:h-20 rounded">
         <div className=" flex justify-center items-center h-full">
           <p className=" text-3xl font-bold text-black opacity-100">
             {skills?.progress}%

@@ -43,7 +43,7 @@ const ProjCard = ({ project, i }: props) => {
       <div className=" space-y-4 md:space-y-4 px-0 md:px-10 max-w-6xl">
         <h4 className=" text-xl md:text-4xl font-semibold text-center">
           <span className=" animated_underline">
-            #{i} {project.title}
+            #{i + 1} {project.title}
           </span>
         </h4>
 

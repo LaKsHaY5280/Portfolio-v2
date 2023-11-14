@@ -19,7 +19,7 @@ const ProjCard = ({ project, i }: props) => {
       <motion.img
         initial={{
           opacity: 0,
-          y: -300,
+          y: -100,
         }}
         whileInView={{
           y: 0,
@@ -32,7 +32,7 @@ const ProjCard = ({ project, i }: props) => {
         // className=" max-md:w-full"
         src={urlFor(project?.image).url()}
         alt={project?.title}
-        className=" mt-14 max-w-md "
+        className=" max-w-md max-md:w-48 "
         width={500}
         height={500}
       />

@@ -23,7 +23,7 @@ export default function DynamicMotionImg({ dirl, skills }: props) {
   return (
     <motion.img
       initial={{
-        x: dirl ? -initialX || -50 : initialX || 50,
+        x: dirl ? -initialX || -30 : initialX || 30,
         opacity: 0,
       }}
       whileInView={{

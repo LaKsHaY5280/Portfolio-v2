@@ -58,13 +58,14 @@ const ProjCard = ({ project, i }: props) => {
           })}
         </div>
 
-        <p className="max-md:text-xs">
+        <p className="max-md:text-xs md:hidden">
           {project?.summary &&
             project.summary.split(" ").slice(0, 30).join(" ")}
           {project?.summary && project.summary.split(" ").length > 30
             ? "..."
             : ""}
         </p>
+        <p className="max-md:text-xs max-md:hidden">{project?.summary}</p>
 
         <ul className=" flex justify-around items-center">
           <li>
